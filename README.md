@@ -1,4 +1,4 @@
-# Genomic-Data-Analysis-Precision-Medicine
+# Genomic Data Analysis & Precision Medicine
 This repository contains the code for assignments from the INFO-B 636: Genomic Data Analysis & Precision Medicine course.
 
 ## Assignment 1: De Novo Assembly
