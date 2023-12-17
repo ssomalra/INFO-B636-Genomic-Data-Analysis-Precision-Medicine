@@ -5,14 +5,14 @@ install.packages('org.Hs.eg.db')
 
 # 1. PREPEARE DATA =============================================================
 # 1. read in count table
-count_matrix <- read.csv('~/Documents/IUPUI/23-24 Courses/636_Precision_Medicine/Assignment_2/featureCounts.txt', sep='\t')
+count_matrix <- read.csv('~/featureCounts.txt', sep='\t')
 
 count_matrix <- count_matrix[, -c(2,3,4,5,6)] # remove columns from count_matrix
 rownames(count_matrix) <- count_matrix$Geneid # set rownames
 count_matrix <- count_matrix[, -1] # remove first column
 
 # 2. read in sample info
-coldata <- read.csv('~/Downloads/assignment_2_info.csv')
+coldata <- read.csv('~/assignment_2_info.csv')
 
 # add rownames to coldata
 rownames(coldata) <- c('alignment.SRR22269872.samAligned.sortedByCoord.out.bam', 'alignment.SRR22269873.samAligned.sortedByCoord.out.bam', 'alignment.SRR22269874.samAligned.sortedByCoord.out.bam',
@@ -72,7 +72,7 @@ geneSymbols <- select(org.Hs.eg.db, keys=ensembl_id, column='SYMBOL', keytype='E
 filtered_res <- cbind(filtered_res, geneSymbols[, 2]) # add gene names to dataframe
 colnames(filtered_res)[ncol(filtered_res)] <- "geneName" # rename column
 
-write.csv(filtered_res, file='~/Documents/IUPUI/23-24 Courses/636_Precision_Medicine/Assignment_2/deseq_condition_results.csv')
+write.csv(filtered_res, file='~/Assignment_2/deseq_condition_results.csv')
 
 # time point
 ensembl_id_time <- rownames(filtered_res_time)
@@ -83,5 +83,5 @@ geneSymbols_time <- select(org.Hs.eg.db, keys=ensembl_id_time, column='SYMBOL', 
 filtered_res_time <- cbind(filtered_res_time, geneSymbols_time[, 2])
 colnames(filtered_res_time)[ncol(filtered_res_time)] <- "geneName"
 
-write.csv(filtered_res_time, file='~/Documents/IUPUI/23-24 Courses/636_Precision_Medicine/Assignment_2/deseq_timepoint_results.csv')
+write.csv(filtered_res_time, file='~/Assignment_2/deseq_timepoint_results.csv')
 
