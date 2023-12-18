@@ -11,14 +11,14 @@ library(ggrepel)
 
 # 1. PREPEARE DATA =============================================================
 # 1. read in count table
-count_matrix <- read.csv('~/Documents/IUPUI/23-24 Courses/636_Precision_Medicine/final_project/featureCounts.txt', sep='\t')
+count_matrix <- read.csv('~/featureCounts.txt', sep='\t')
 
 count_matrix <- count_matrix[, -c(2,3,4,5,6)] # remove columns from count_matrix
 rownames(count_matrix) <- count_matrix$Geneid # set rownames
 count_matrix <- count_matrix[, -1] # remove first column
 
 # 2. read in sample info
-metadata <- read.csv('~/Documents/IUPUI/23-24 Courses/636_Precision_Medicine/final_project/metadata.csv')
+metadata <- read.csv('~/metadata.csv')
 
 # add rownames to coldata
 rownames(metadata) <- c('RNAseq_control1.sorted.bam', 'RNAseq_control2.sorted.bam',
@@ -58,7 +58,7 @@ geneSymbols_unique <- geneSymbols %>% distinct(ENSEMBL, .keep_all = TRUE) # remo
 filtered_res <- cbind(filtered_res, geneSymbols_unique[, 2]) # add gene names to dataframe
 colnames(filtered_res)[ncol(filtered_res)] <- "geneName" # rename column
 
-write.csv(filtered_res, file='~/Documents/IUPUI/23-24 Courses/636_Precision_Medicine/final_project/LARP4_DEG.csv')
+write.csv(filtered_res, file='~/LARP4_DEG.csv')
 
 # 5. VIOLIN PLOT ===============================================================
 # prepare res dataset
@@ -79,7 +79,7 @@ res3 <- res2 %>%
                            TRUE ~ "Unchanged")
   )
 
-#write.csv(res3, file='~/Documents/IUPUI/23-24 Courses/636_Precision_Medicine/final_project/LARP4_DEG_labelled.csv')
+#write.csv(res3, file='~/LARP4_DEG_labelled.csv')
 
 # extract top 10 upregulated and top 10 downregulated genes
 top_upregulated <- res3 %>%
