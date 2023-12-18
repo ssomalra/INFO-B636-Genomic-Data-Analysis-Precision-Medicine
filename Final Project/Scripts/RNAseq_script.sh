@@ -59,7 +59,6 @@ module unload python
 module load python/3.10.5
 module load samtools
 
-
 samtools view -S -b RNAseq_control1.sam > RNAseq_control1.bam
 samtools view -S -b RNAseq_control2.sam > RNAseq_control2.bam
 samtools view -S -b RNAseq_rep1.sam > RNAseq_rep1.bam
