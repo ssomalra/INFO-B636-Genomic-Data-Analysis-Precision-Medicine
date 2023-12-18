@@ -7,9 +7,10 @@ BiocManager::install("HDO.db", force=TRUE)
 BiocManager::install("digest")
 BiocManager::install("pathview")
 BiocManager::install("enrichplot", force=TRUE)
+
 library(clusterProfiler)
 library(enrichplot)
-library(ggplot2) # we use ggplot2 to add x axis labels (ex: ridgeplot)
+library(ggplot2)
 
 # GET ANNOTATIONS
 BiocManager::install("AnnotationDbi")
@@ -19,7 +20,7 @@ library(org.Hs.eg.db)
 
 # 2. FUNCTIONAL ENRICHMENT =====================================================
 # open file
-UTR_genes <- read.xlsx('Documents/IUPUI/23-24 Courses/636_Precision_Medicine/final_project/homer_ann.xlsx', sheet="3UTR_genes")
+UTR_genes <- read.csv('~/3UTR_peaks_genes.csv')
 genes <- UTR_genes$Gene.Name # extract genes
 genes <- na.omit(genes)
 sorted_genes <- sort(genes, decreasing = TRUE)
