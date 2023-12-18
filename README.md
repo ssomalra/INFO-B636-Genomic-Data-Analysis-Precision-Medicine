@@ -18,7 +18,7 @@ Execution:
 5. The output file from Oases, transcript.fa, was downloaded and used as input in assembly_metrics.ipynb to calculate assembly metrics. 
 
 ## Assignment 2: RNA Sequencing
-RNA-seq analysis to evaluate changes in transcriptomic profiles between the two conditions, SARS-CoV-2 infected vs non-infected samples, and the two time points, 24H and 72H. 
+Conducted RNA-seq analysis to evaluate changes in transcriptomic profiles between the two conditions, SARS-CoV-2 infected vs non-infected samples, and the two time points, 24H and 72H. 
 
 Programming Language: R and Linux
 
@@ -45,4 +45,9 @@ Execution:
 5. Trimmed reads were aligned using STAR
 6. Reads were quantified using featureCounts.
 7. The count table generated from the previous step along with the assignment_2_info.csv file, which contains the metadata, served as input for the DESeq2.R script for conducting a differential gene expression analysis through DESeq2.
-9. Differentially expressed genes (DEGs) were used as input for functional enrichment analysis using ClueGo. NOTE: ClueGo did not find GO terms for the DEGs from the two conditions. 
+9. Differentially expressed genes (DEGs) were used as input for functional enrichment analysis using ClueGo. NOTE: ClueGo did not find GO terms for the DEGs from the two conditions.
+
+## Final Project
+<b>Unraveling LARP4 Interactions with PABPs and Exploring Functional Significance in HepG2 Cells</b>
+
+This project implements eCLIP data obtained from HepG2 cells targeting LARP4 to validate the binding interactions between LARP4, poly(A) tails, and potentially PABPs. RNAseq analysis was conducted on HepG2 cells subjected to shRNA knockdown against LARP4, comparing it with shRNA knockdown against no target. The analysis revealed genes that exhibited differential expression and doubled as binding sites for LARP4. This served as a validation strategy to support the idea that changes in the gene expression following LARP4 knockdown are likely a consequence of direct regulatory interactions with LARP4. 
