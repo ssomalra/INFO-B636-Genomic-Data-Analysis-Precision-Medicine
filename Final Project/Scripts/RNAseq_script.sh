@@ -22,8 +22,8 @@ ENCFF996ORV.fastq > RNAseq_rep2_2.fastq
 ENCFF226MZL.fastq > RNAseq_control1_1.fastq
 ENCFF108KML.fastq > RNAseq_control1_2.fastq
 
-ENCFF512QIR.fastq -> RNAseq_control2_1.fastq
-ENCFF816KYC.fastq -> RNAseq_control2_2.fastq
+ENCFF512QIR.fastq > RNAseq_control2_1.fastq
+ENCFF816KYC.fastq > RNAseq_control2_2.fastq
 
 
 # quality control - fastqc
